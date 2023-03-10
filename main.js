@@ -1,4 +1,4 @@
-    const items = [
+    const  items = [
         { 
             id:1,
             nombre:"alfajor",
@@ -79,13 +79,17 @@
             if(prod.cant == 0){
             //Un contenedor para el producto
             const producto = document.createElement('li')
-            producto.classList.add ('lista-item')
+            producto.classList.add ('lista-item'+prod.id)
             //Creo los espacios para los datos del producto
             const productoNombre = document.createElement('p')
             const productoCant = document.createElement('p')
             const productoPrecio = document.createElement('p')
+            //Un boton para quitar la cantidad de productos
+            const productoBoton = document.createElement('button')
+            productoBoton.classList.add('btn-borrar')
+            productoBoton.textContent = '-'
             
-            //Le agregamos ID a los datos del producto para poder modificarlos despues
+            //Le agregamos ID a los datos del producto para poder modificarlos después
             productoCant.id = "Producto"+prod.id
             productoPrecio.id = "Precio"+prod.id
             
@@ -100,16 +104,34 @@
             carrito.appendChild(producto)
             producto.appendChild(productoNombre)
             producto.appendChild(productoPrecio)
+            producto.appendChild(productoBoton)
+            
+            //Funcion del boton de borrado
+            productoBoton.addEventListener('click', () => {
+                if(prod.cant == 1){
+                    prod.cant = 0
+                    carrito.removeChild(producto)
+                }else if(prod.cant > 1){
+                    prod.cant --
+                    productoCant.textContent = prod.cant
+                    productoPrecio.textContent -= prod.precio
+                }
+                suma -= prod.precio
+                total.textContent = suma
+                if(total.textContent == 0)
+                    total.textContent = ""
+                })
             
             }else{
                 //En caso que ya exista el producto, modificamos sus datos
                 //Accedemos mediante su ID
+                prod.cant++
                 const producto = document.querySelector('#Producto'+prod.id)
                 const precio = document.querySelector('#Precio'+prod.id)
                 producto.innerHTML = prod.cant
                 precio.innerHTML = parseInt(precio.innerHTML,10) + prod.precio
             }
-            prod.cant++
+            
             
             
             
