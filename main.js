@@ -43,17 +43,27 @@
     items.forEach(element => {
         const nodo = document.createElement('div')
         nodo.classList.add('card')
+        nodo.classList.add('text-bg-dark')
+        nodo.classList.add('mb-3')
         
-        const nombre = document.createElement('h3')
-        nombre.classList.add('card-name')
+        const imagen = document.createElement('img')
+        imagen.classList.add('card-img-top')
+        
+        
+        const cuerpo = document.createElement('div')
+        cuerpo.classList.add('card-body')
+        
+        const nombre = document.createElement('h5')
+        nombre.classList.add('card-title')
         nombre.textContent = element.nombre
         
         const precio = document.createElement('p')
         nombre.classList.add('card-text')
-        precio.textContent = element.precio
+        precio.textContent = "$"+element.precio
         
         const btn = document.createElement('button')
         btn.classList.add('btn')
+        btn.classList.add("btn-primary")
         btn.textContent = "+";
         btn.setAttribute('id', element.id)
         btn.addEventListener('click', () => {
@@ -62,9 +72,10 @@
             
         })
         
-        nodo.appendChild(nombre)
-        nodo.appendChild(precio)
-        nodo.appendChild(btn)
+        cuerpo.appendChild(nombre)
+        cuerpo.appendChild(precio)
+        cuerpo.appendChild(btn)
+        nodo.appendChild(cuerpo)
         productos.appendChild(nodo)
         
         function calcularTotal(x){
