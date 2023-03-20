@@ -1,3 +1,20 @@
 #carrito{
     list-style: none;
 }
+
+#carrito-contenedor{
+    left: 90%;
+    top: 55px;
+    background-color: black;
+    display: flex;
+}
+
+@media (max-width:767px) {
+    #marcas{
+        display: none;
+    } 
+}
+
+a .nav-item:hover{
+    color:aqua
+}

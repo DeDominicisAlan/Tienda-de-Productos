@@ -70,7 +70,7 @@
     items.forEach(element => {
         const nodo = document.createElement('div')
         nodo.classList.add('card')
-        nodo.style.width= "18rem";
+        nodo.style.maxWidth = "18rem";
         
         const imagen = document.createElement('img')
         imagen.classList.add('card-img-top')
@@ -91,6 +91,7 @@
         
         const columna = document.createElement('div')
         columna.classList.add('col');
+        nodo.classList.add('m-1')
         
         const btn = document.createElement('button')
         btn.classList.add('btn')
