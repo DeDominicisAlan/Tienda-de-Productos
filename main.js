@@ -1,22 +1,49 @@
     const  items = [
         { 
             id:1,
-            nombre:"alfajor",
-            precio: 100,
+            nombre:"GTX 1650",
+            img: "/img/gtx1650.jpg",
+            precio: 131517,
             cant:0
         },
         
         {
             id:2,
-            nombre: "chupetin",
-            precio: 50,
+            nombre: "GTX 1050 TI",
+            img: "/img/gtx1050ti.jpg",
+            precio: 118000,
             cant:0
         },
         
         {
             id:3,
-            nombre: "galletitas",
-            precio: 300,
+            nombre: "RX 580",
+            img: "/img/rx580.jpg",
+            precio: 117000,
+            cant: 0
+        } ,
+        
+        {
+            id:4,
+            nombre: "RX 580",
+            img: "/img/rx580.jpg",
+            precio: 117000,
+            cant: 0
+        } ,
+        
+        {
+            id:5,
+            nombre: "RX 580",
+            img: "/img/rx580.jpg",
+            precio: 117000,
+            cant: 0
+        } ,
+        
+        {
+            id:6,
+            nombre: "RX 580",
+            img: "/img/rx580.jpg",
+            precio: 117000,
             cant: 0
         }
     ]
@@ -43,11 +70,12 @@
     items.forEach(element => {
         const nodo = document.createElement('div')
         nodo.classList.add('card')
-        nodo.classList.add('text-bg-dark')
-        nodo.classList.add('mb-3')
+        nodo.style.width= "18rem";
         
         const imagen = document.createElement('img')
         imagen.classList.add('card-img-top')
+        imagen.src = element.img
+        
         
         
         const cuerpo = document.createElement('div')
@@ -58,8 +86,11 @@
         nombre.textContent = element.nombre
         
         const precio = document.createElement('p')
-        nombre.classList.add('card-text')
+        precio.classList.add('card-text')
         precio.textContent = "$"+element.precio
+        
+        const columna = document.createElement('div')
+        columna.classList.add('col');
         
         const btn = document.createElement('button')
         btn.classList.add('btn')
@@ -72,11 +103,13 @@
             
         })
         
+        nodo.appendChild(imagen)
         cuerpo.appendChild(nombre)
         cuerpo.appendChild(precio)
         cuerpo.appendChild(btn)
         nodo.appendChild(cuerpo)
-        productos.appendChild(nodo)
+        columna.appendChild(nodo)
+        productos.appendChild(columna)
         
         function calcularTotal(x){
             if(suma != 0)

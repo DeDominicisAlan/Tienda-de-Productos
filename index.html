@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
-</head>
-<body>
-    
-    <div class="container">
-        <div id="productos" class="card-group">
-            
+  </head>
+  <body class="bg-dark-subtle">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div
+        data-bs-theme="dark"
+        class="container-fluid justify-content-between align-content-center"
+      >
+        <a class="navbar-brand mb-0 h1" href="#">Hardware GPU</a>
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active" href="#">Placas de video</a>
+          <a class="nav-link active" href="#">Contacto</a>
         </div>
+      </div>
+    </nav>
+
+    <div class="container bg-dark-subtle">
+      <div
+        id="productos"
+        class="row row-cols-3 justify-content-center">
+            
+      </div>
     </div>
-    
-    
-    <ul id="carrito">
-        
-        
-    </ul>
-    <div>
+
+    <div class="col-4">
+      <ul id="carrito" class="row row-cols-4"></ul>
+
+      <div class="col-1">
         <p>Total:</p>
         <p id="total"></p>
+      </div>
+
+      <div class="container"></div>
+
+      <button id="reset">Reiniciar</button>
     </div>
+
     
-    <div class="container">
-        
-    </div>
-    
-    
-    <button id="reset">Reiniciar</button>
+
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
